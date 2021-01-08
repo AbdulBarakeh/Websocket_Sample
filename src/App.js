@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import { BrowserRouter,Route,Switch } from "react-router-dom";
+import Home  from "./components/Home";
+import SideBar from './components/Sidebar';
+import ViewOne from './components/ViewOne';
+import ViewTwo from './components/ViewTwo';
 
-function App() {
+export class App extends React.Component {
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <div className="fullcontainer">
+        <SideBar></SideBar>
+        <div className="content">
+          <Switch>
+            <Route exact path="/" component={Home}></Route>
+            <Route exact path="/ViewOne" component={() => <ViewOne text={"This is the magnificent ViewOne"} />} /> 
+            <Route exact path="/ViewTwo" component={() => <ViewTwo text={"This is the magnificent ViewTwo"} />} /> 
+          </Switch>
+        </div> 
+      </div>
+    </BrowserRouter>
+  ); 
+  }
 }
 
-export default App;
