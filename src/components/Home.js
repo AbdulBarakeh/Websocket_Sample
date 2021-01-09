@@ -23,13 +23,20 @@ export default class Home extends React.Component {
     render(){
         return (
         <div className="home">
-            <h1>Welcome to this React SPA</h1>
-            <h2>This is a test sample of routing</h2>
-            <h3>Look at this counter</h3>
-            <h4>count: {this.state.count}</h4>
+            count: {this.state.count}
+            <br/>
             <button onClick={this.Increment}>Increment</button>
             <button onClick={this.Decrement}>Decrement</button>
         </div>
     );
     }
 }
+
+/*
+            <h1>Welcome to this React SPA</h1>
+            <h2>This is a test sample of routing</h2>
+            <h3>Look at this counter</h3>
+            <h4>count: {this.state.count}</h4>
+            <button onClick={this.Increment}>Increment</button>
+            <button onClick={this.Decrement}>Decrement</button>
+*/
