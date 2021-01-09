@@ -22,10 +22,10 @@ wsServer.on("connection", (wsClient) => {
     wsClient.send("This message was pushed by the WebSocket server");
 
     wsClient.onerror = (error) =>
-        console.log(`The server received the error:${error["code"]}`);
+        console.log(`The server received the error: ${error["code"]}`);
     
     clients.push(wsClient)
     
     wsClient.onmessage = (message)=>
-        clients.forEach((client) =>client.send(`The server received:${message['data']}`)) 
+        clients.forEach((client) =>client.send(`The server received: ${message['data']}`)) 
 });

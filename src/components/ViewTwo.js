@@ -9,9 +9,8 @@ componentDidMount(){
     console.log('WebSocket Client Connected');
   };
   client.onmessage = (message) => {
-    console.log(message.data);
     let msgDiv = document.getElementById("message")
-    msgDiv.innertext += message.data
+    msgDiv.innerHTML += `${message.data} <br/>`
   };
   
 }
