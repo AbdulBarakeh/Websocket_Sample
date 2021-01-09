@@ -31,3 +31,10 @@
   background-color: lightcoral;
   height: 100%;
 }
+#message{
+  color: #000;
+  background-color: aliceblue;
+  height: 300px;
+  width: 400px;
+
+}

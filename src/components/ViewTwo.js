@@ -10,12 +10,14 @@ componentDidMount(){
   };
   client.onmessage = (message) => {
     console.log(message.data);
+    let msgDiv = document.getElementById("message")
+    msgDiv.innertext += message.data
   };
   
 }
 SendMsg = () =>{
   let msg = document.getElementById("messageInput")
-  console.log(msg.value)
+  client.send(msg.value)
 }
   render() {
     return (
@@ -25,7 +27,7 @@ SendMsg = () =>{
         <br/>
         <input type="text" className="messageInput" id="messageInput"/>
         <button onClick={this.SendMsg}> Send</button>
-        <div className="message"></div>
+        <div className="message" id="message"></div>
       </div>
     );
   }
