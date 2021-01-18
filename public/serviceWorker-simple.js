@@ -3,7 +3,7 @@
 //Important to know that due to being a SPA the browser is not redirected which means it doesn't cache the tabs, so you have to go and refresh
 const cacheName = "cache3";
 
-//install & cache
+//install
 self.addEventListener("install", (event) => {
   console.log(`ServiceWorker is Installed`);
 });
