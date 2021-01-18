@@ -8,11 +8,8 @@
 //   httpServer: server
 // });
 
-const express = require("express");
-const http = require("http")
 const { Server } = require('ws');
 
-const app = express()
 //WebSocketServer
 let clients = []
 const wsServer = new Server({ port: 8085 });
@@ -23,9 +20,9 @@ wsServer.on("connection", (wsClient) => {
 
     wsClient.onerror = (error) =>
         console.log(`The server received the error: ${error["code"]}`);
-    
+
     clients.push(wsClient)
-    
+
     wsClient.onmessage = (message)=>
         clients.forEach((client) =>client.send(`The server received: ${message['data']}`)) 
 });
