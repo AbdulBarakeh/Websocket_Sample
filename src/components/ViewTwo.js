@@ -22,11 +22,15 @@ SendMsg = () =>{
     return (
 
       <div className="viewTwo">
+        <div className="center">
+
           {this.props.text}
         <br/>
         <input type="text" className="messageInput" id="messageInput"/>
         <button onClick={this.SendMsg}> Send</button>
         <div className="message" id="message"></div>
+
+      </div>
       </div>
     );
   }
